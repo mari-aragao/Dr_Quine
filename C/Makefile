@@ -28,10 +28,11 @@ Sully: $(SULLY_OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
 
 clean:
-	rm -f *.o tmp_Colleen Grace_kid.c Sully_*
+	rm -f *.o
 
 fclean: clean
 	rm -f $(COLLEEN) $(GRACE) $(SULLY)
+	rm -f tmp_Colleen Grace_kid.c Sully_*
 
 re: fclean all
 
