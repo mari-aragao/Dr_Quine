@@ -3,11 +3,11 @@
 #include <unistd.h>
 
 /*
-    This program will print its own source when run.
+    comment
 */
 
 #define FILE_NAME "Grace_kid.c"
-#define QUINE "#include <stdio.h>%c#include <fcntl.h>%c#include <unistd.h>%c%c/*%c    This program will print its own source when run.%c*/%c%c#define FILE_NAME %cGrace_kid.c%c%c#define QUINE %c%s%c%c#define GRACE() int main() {int fd = open(FILE_NAME, O_WRONLY | O_CREAT | O_TRUNC, 0644); if (fd < 0) return -1; dprintf(fd, QUINE, 10, 10, 10, 10, 10, 10, 10, 10, 34, 34, 10, 34, QUINE, 34, 10, 10, 10, 10); close(fd); return 0;}%c%cGRACE()%c"
-#define GRACE() int main() {int fd = open(FILE_NAME, O_WRONLY | O_CREAT | O_TRUNC, 0644); if (fd < 0) return -1; dprintf(fd, QUINE, 10, 10, 10, 10, 10, 10, 10, 10, 34, 34, 10, 34, QUINE, 34, 10, 10, 10, 10); close(fd); return 0;}
+#define QUINE "#include <stdio.h>%1$c#include <fcntl.h>%1$c#include <unistd.h>%1$c%1$c/*%1$c    comment%1$c*/%1$c%1$c#define FILE_NAME %2$cGrace_kid.c%2$c%1$c#define QUINE %2$c%3$s%2$c%1$c#define GRACE() int main() {int fd = open(FILE_NAME, O_WRONLY | O_CREAT | O_TRUNC, 0644); if (fd < 0) return -1; dprintf(fd, QUINE, 10, 34, QUINE); close(fd); return 0;}%1$c%1$cGRACE()%1$c"
+#define GRACE() int main() {int fd = open(FILE_NAME, O_WRONLY | O_CREAT | O_TRUNC, 0644); if (fd < 0) return -1; dprintf(fd, QUINE, 10, 34, QUINE); close(fd); return 0;}
 
 GRACE()
